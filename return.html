@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <meta charset="UTF-8">
+    <title>Payment success - MX2</title>
+    <style>
+        body {
+            background: #f2f4f7;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 50px ;
+        }
+        .box {
+            background: #fff;
+            padding: 40px ;
+            max-width: 500px;
+            margin:auto ;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .box h1 {
+            color: #138dff;
+            margin-bottom:10px;
+        }
+        .box p {
+            color: #555;
+            font-size:18px;
+        }
+        .btn {
+            background: #138dff;
+            padding: 12px 24px;
+            margin-top:30px;
+            color: #fff;
+           display: inline-block;
+           text-decoration: none;
+           border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Payment has been completed successfully</h1>
+        <p> Thank you for purchasing our app. The operation has been confirmed</p>
+        <p>Transaction number<strong id="txn-id">  Loading...</strong></p>
+        <a href="/" class="btn">Return to home</a>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const txnId = urlParams.get('token') || urlParams.get('paymentId') || 'unavailable';
+        document.getElementById('txn-id').textContent= txtId;
+    </script>
+</body>
